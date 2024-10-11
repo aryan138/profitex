@@ -6,7 +6,7 @@ const cookieParser = require('cookie-parser');
 const PORT = 3000;
 dotenv.config()
 // Middleware to parse JSON requests
-app.use(cors({ origin: 'https://profitex-navy.vercel.app/', credentials: true }));
+app.use(cors({ origin: 'https://profitex-navy.vercel.app', credentials: true }));
 app.use(express.json());
 app.use(cookieParser())
 app.use(function (req, res, next) {
