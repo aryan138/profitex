@@ -6,9 +6,14 @@ const cookieParser = require('cookie-parser');
 const PORT = 3000;
 dotenv.config()
 // Middleware to parse JSON requests
-app.use(cors());
+app.use(cors({ origin: 'https://profitex-navy.vercel.app/', credentials: true }));
 app.use(express.json());
 app.use(cookieParser())
+app.use(function (req, res, next) {
+    res.header('Access-Control-Allow-Origin', req.headers.origin);
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
 
 // Database connection
 const dbConnect = require('./middlewares/dB.js');
