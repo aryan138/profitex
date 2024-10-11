@@ -1,14 +1,17 @@
 const express = require('express');
 const app = express();
 const cors = require('cors');
+const dotenv = require('dotenv')
 const cookieParser = require('cookie-parser');
 const PORT = 3000;
-
+dotenv.config()
 // Middleware to parse JSON requests
 app.use(express.json());
 app.use(cookieParser())
-app.use(cors({origin: 'http://localhost:3001',
-    credentials: true,}));
+app.use(cors({
+    origin: '*',
+    credentials: true,
+}));
 
 
 // Database connection
@@ -39,8 +42,8 @@ app.use('/branch', branchRoutes);
 app.use('/inventory', inventoryRoutes);
 app.use('/inventorybranch', inventoryBranchRoutes);
 app.use('/user', userRoutes);
-app.use('/order',orderRoutes);
-app.use('/invoice',invoiceRoutes);
+app.use('/order', orderRoutes);
+app.use('/invoice', invoiceRoutes);
 
 // Start the server
 app.listen(PORT, () => {
