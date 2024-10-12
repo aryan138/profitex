@@ -31,3 +31,6 @@
   background-color: #422afb;
 }
 
+html {
+  scroll-behavior: smooth;
+}

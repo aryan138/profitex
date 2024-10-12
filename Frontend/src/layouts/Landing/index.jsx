@@ -11,14 +11,23 @@ import '../../Scroll.css'
 const Landing = () => {
   return (
     <div>
-    <HeroPage/>
-    <LandingFeatures/>
-    <Testimonial/>
-    <Price/>
-    <FAQ/>
-    <Footer/>
-    
-  </div>
+      <div id="home">
+        <HeroPage />
+      </div>
+      <div id="features">
+        <LandingFeatures />
+      </div>
+      <Testimonial />
+      <div id="pricing">
+        <Price />
+      </div>
+      <div id="faq">
+        <FAQ />
+      </div>
+
+      <Footer />
+
+    </div>
   )
 }
 
